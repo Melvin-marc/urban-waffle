@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ABSOND | Dark Streetwear & Apparel</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <header>
+    <div class="logo">ABSOND</div>
+    <nav>
+      <ul>
+        <li><a href="#shop">Shop</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="cart-icon-container" id="cartToggle">
+      <svg class="cart-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+      </svg>
+      <span class="cart-badge" id="cartCount">0</span>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>ABSOND COLLECTION</h1>
+      <p>Heavyweight textures, dark aesthetics, and raw underground streetwear silhouettes.</p>
+      <a href="#shop" class="btn-primary">Explore Drop</a>
+    </div>
+  </section>
+
+  <!-- Shop Grid Section -->
+  <main class="products-section" id="shop">
+    <h2 class="section-title">Available Drops</h2>
+    <div class="product-grid" id="productGrid">
+      <!-- Products injected dynamically via JavaScript -->
+    </div>
+  </main>
+
+  <!-- Quick View / Detail Modal -->
+  <div class="modal-overlay" id="productModal">
+    <div class="modal-content">
+      <button class="modal-close" id="modalClose">&times;</button>
+      <div class="modal-body">
+        <div class="modal-img-container">
+          <img id="modalImg" src="" alt="Product Image">
+        </div>
+        <div class="modal-details">
+          <h3 id="modalTitle"></h3>
+          <p class="modal-price" id="modalPrice"></p>
+          <p class="modal-desc">Crafted from premium heavyweight cotton with custom distressed graphics and metal hardware accents. Designed for an oversized fit.</p>
+          
+          <div class="size-selector-label">Select Size:</div>
+          <div class="sizes" id="sizeOptions">
+            <button class="size-btn" data-size="S">S</button>
+            <button class="size-btn active" data-size="M">M</button>
+            <button class="size-btn" data-size="L">L</button>
+            <button class="size-btn" data-size="XL">XL</button>
+          </div>
+
+          <button class="btn-primary" id="modalAddToCart">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Slide-out Cart Drawer -->
+  <div class="cart-drawer" id="cartDrawer">
+    <div class="cart-header">
+      <h3>Your Bag</h3>
+      <button class="close-cart" id="closeCart">&times;</button>
+    </div>
+    <div class="cart-items" id="cartItemsContainer">
+      <!-- Cart items loaded here -->
+    </div>
+    <div class="cart-footer">
+      <div class="cart-total">
+        <span>Total:</span>
+        <span id="cartTotalPrice">₦0</span>
+      </div>
+      <button class="btn-primary checkout-btn" id="checkoutBtn">Proceed to Checkout</button>
+    </div>
+  </div>
+  <div class="drawer-overlay" id="drawerOverlay"></div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2026 ABSOND Clothing. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
+<!-- EmailJS SDK -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/index.min.js"></script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init({
+        publicKey: "5h9cM6O_WzNOL0Pnx", // Replace with your actual EmailJS Public Key
+      });
+   })();
+</script>
